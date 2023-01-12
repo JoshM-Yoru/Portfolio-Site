@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Contact from "../components/ContactMe";
+---
+
+<Layout title="About Me">
+    <main>
+        <Navbar />
+        <Contact client:only />
+    </main>
+</Layout>

@@ -37,13 +37,27 @@ const { title } = Astro.props;
     }
     html {
         font-family: system-ui, sans-serif;
-        background: var(--background-gradient);
-        height: fit-content;
-        background-size: cover;
+        background-color: black;
     }
     code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+    body {
+        display: flex;
+    }
+    main {
+        background: var(--background-gradient);
+        min-height: 100vh;
+        height: fit-content;
+        background-size: cover;
+        color: white;
+        width: 1100px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        border-left: 1px solid #444;
+        border-right: 1px solid #444;
     }
     .container {
         padding: 1.5rem;

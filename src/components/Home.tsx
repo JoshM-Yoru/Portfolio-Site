@@ -5,6 +5,7 @@ const Container = styled.div`
     padding: 1rem;
     height: fit-content;
     margin: auto;
+    width: 700px;
 `
 const IntroWrapper = styled.div`
     display: flex;
@@ -27,10 +28,10 @@ const Name = styled.p`
     text-align: right;
 `
 const ImageWrapper = styled.div`
-    height: 350px;
-    width: 350px;
+    max-height: 365px;
+    max-width: 365px;
     margin: 1rem auto;
-    border-radius: 50%;
+    border-radius: 20%; 
     poistion: relative;
     overflow: hidden;
     display: flex;
@@ -38,7 +39,7 @@ const ImageWrapper = styled.div`
 `
 const PortfolioImage = styled.img`
     display: inline;
-    margin: -10% auto;
+    margin: -30px auto;
     height: 550px;
     width: auto;
 `

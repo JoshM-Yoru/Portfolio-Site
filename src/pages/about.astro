@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import AboutMe from "../components/AboutMe";
+import Technologies from "../components/Technologies.astro";
+---
+
+<Layout title="About Me">
+    <main>
+        <Navbar />
+        <AboutMe client:only />
+        <Technologies />
+    </main>
+</Layout>
