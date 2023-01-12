@@ -1,0 +1,183 @@
+---
+import GithubLogo from "../assets/GithubLogo.png"
+import YoutubeLogo from "../assets/youtube.png"
+import WeatherLogo from "../assets/weather.png"
+---
+
+<h2>Projects</h2>
+<div class="container">
+    <div class="project-wrapper ecommerce-site">
+        <div class="project-body">
+            <h3>NAJ Clothing</h3>
+            <div class="project-links">
+                <a href="https://github.com/JoshM-Yoru/ecommerce-project" target="_blank">
+                    <img src={GithubLogo} alt="Github Logo" class="github" />
+                    Repo
+                </a>
+                <a href="https://youtu.be/ECdx8Kc_1Wc" target="_blank">
+                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube"/>
+                    Demo
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-wrapper goodbank-app">
+        <div class="project-body">
+            <h3>GoodBank</h3>
+            <div class="project-links">
+                <a href="https://github.com/JoshM-Yoru/Banking-App" target="_blank">
+                    <img src={GithubLogo} alt="Github Logo" class="github" />
+                    Repo
+                </a>
+                <a href="https://youtu.be/ECdx8Kc_1Wc" target="_blank">
+                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube"/>
+                    Demo
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-wrapper weather-app">
+        <div class="project-body">
+            <h3>Weather App</h3>
+            <div class="project-links">
+                <a href="https://github.com/JoshM-Yoru/weather-app" target="_blank">
+                    <img src={GithubLogo} alt="Github Logo" class="github" />
+                    Repo
+                </a>
+                <a href="https://joshm-yoru.github.io/weather-app/" target="_blank">
+                    <img src={WeatherLogo} alt="Weather Logo" class="weather"/>
+                    Site
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h2{
+        margin-block: 1.5rem;
+    }
+
+    h3 {
+        width: 100%;
+        text-align: right;
+        margin-top: -3%;
+        padding: 0.5rem;
+    }
+
+    .ecommerce-site {
+        background-image: url(../assets/NAJclothing.png);
+    }
+
+    .goodbank-app { 
+        background-image: url(../assets/goodbankwelcome.png);
+    }
+
+    .goodbank-app  h3 {
+        color: #2d2e45;
+    }
+
+    .weather-app {
+        background-image: url(../assets/weatherapp.png);
+    }
+
+    .project-wrapper {
+        background-size: cover;
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 1.9;
+        overflow: hidden;
+        transition: transform 500ms ease;
+        margin: 1.5rem 0.5rem;
+    }
+
+    .project-wrapper:hover,
+    .project-wrapper:focus-within {
+        transform: scale(1.05);
+    }
+
+    .project-wrapper:hover .project-body,
+    .project-wrapper:focus-within .project-body {
+        transform: translateY(0);
+        transition-delay: 100ms;
+    }
+
+    .project-wrapper:focus-within .project-body {
+        transition-duration: 0ms;
+    }
+
+    .project-body {
+        min-height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            hsl(0 0% 0% / 0),
+            hsl(0 0% 0% / 0.7)
+            );
+        /* background: hsl(0 0% 0% / 0.5); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: translateY(75%);
+        transition: transform 500ms ease;
+    }
+
+    .project-body > *:not(h3) {
+        opacity: 0;
+        transition: opacity 800ms ease-in;
+    }
+
+    .project-wrapper:hover .project-body > *,
+    .project-wrapper:focus-within .project-body > * {
+        opacity: 1;
+        transition-delay: 400ms;
+    }
+
+    .project-links {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    a {
+        cursor: pointer;
+        margin-inline: 1rem;
+        padding: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        border-radius: 5px;
+        transition: background 400ms linear;
+    }
+
+    a:hover {
+        background: rgba(0,0,0,0.2);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+    }
+
+    .github {
+        height: 80px;
+    }
+
+    .youtube {
+        height: 55px;
+        margin: 10px 0 12px 0
+    }
+
+    .weather {
+        height: 80px;
+    }
+
+    a:visited {
+        color: white;
+    }
+</style>

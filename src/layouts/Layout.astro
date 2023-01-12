@@ -38,11 +38,14 @@ const { title } = Astro.props;
     html {
         font-family: system-ui, sans-serif;
         background: var(--background-gradient);
-        height: 100vh;
-        background-size: 100%;
+        height: fit-content;
+        background-size: cover;
     }
     code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+    .container {
+        padding: 1.5rem;
     }
 </style>
