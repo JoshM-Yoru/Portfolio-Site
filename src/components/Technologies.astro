@@ -1,0 +1,71 @@
+---
+import ReactLogo from "../assets/react.png";
+import TSLogo from "../assets/typescript.png"
+import JSLogo from "../assets/javascript.png"
+import HTMLLogo from "../assets/html.png"
+import CSSLogo from "../assets/css.png"
+import SCLogo from "../assets/styledcomponents.png"
+import SpringLogo from "../assets/spring.png"
+import JavaLogo from "../assets/java.png"
+import PostgesLogo from "../assets/postgres.png"
+import JenkinsLogo from "../assets/jenkins.png"
+import DockerLogo from "../assets/docker.png"
+import AWSLogo from "../assets/aws.png"
+import FedoraLogo from "../assets/fedora.png"
+import NVimLogo from "../assets/neovim.png"
+import VimLogo from "../assets/vim.png"
+import PostmanLogo from "../assets/postman.png"
+import DBeaverLogo from "../assets/dbeaver.png"
+import RustLogo from "../assets/rust.png"
+import AstroLogo from "../assets/astro.png"
+---
+
+<div class="technologies-container">
+    <h2>Technologies</h2>
+    <div class="wrapper">
+        <img src={ReactLogo} loading="lazy" alt="React Logo" />
+        <img src={TSLogo} loading="lazy" alt="Typescript Logo" />
+        <img src={JSLogo} loading="lazy" alt="Javascript Logo" />
+        <img src={HTMLLogo} loading="lazy" alt="HTML5 Logo" />
+        <img src={CSSLogo} loading="lazy" alt="CSS3 Logo" />
+        <img src={SCLogo} loading="lazy" alt="Styled Components Logo" />
+        <img src={SpringLogo} loading="lazy" alt="Spring Logo" />
+        <img src={JavaLogo} loading="lazy" alt="Java Logo" />
+        <img src={PostgesLogo} loading="lazy" alt="PostgreSQL Logo" />
+        <img src={JenkinsLogo} loading="lazy" alt="Jenkins Logo" />
+        <img src={DockerLogo} loading="lazy" alt="Docker Logo" />
+        <img src={AWSLogo} loading="lazy" alt="AWS Logo" />
+    </div>
+    <h2>Tools</h2>
+    <div class="wrapper">
+        <img src={FedoraLogo} loading="lazy" alt="Fedora Linux Logo" />
+        <img src={NVimLogo} loading="lazy" alt="Neovim Logo" />
+        <img src={VimLogo} loading="lazy" alt="Vim Logo" />
+        <img src={PostmanLogo} loading="lazy" alt="Postman Logo" />
+        <img src={DBeaverLogo} loading="lazy" alt="DBeaver Logo" />
+    </div>
+    <h2>Currently Learning</h2>
+    <div class="wrapper">
+        <img src={RustLogo} loading="lazy" alt="Rust Logo" />
+        <img src={AstroLogo} loading="lazy" alt="Astro Logo" />
+    </div>
+</div>
+
+<style>
+    .technologies-container {
+        padding: 1.5rem;
+    }
+    h2 {
+        margin-block: 2rem;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    img {
+        height: 100px;
+        width: auto;
+        padding: 0.5rem;
+    }
+</style>

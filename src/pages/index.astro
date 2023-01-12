@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar";
+import Home from "../components/Home";
+import AboutMe from "../components/AboutMe";
+/* import Technologies from "../components/Technologies"; */
+import Technologies from "../components/Technologies.astro";
+import Projects from "../components/Projects";
+import Contact from "../components/ContactMe";
+---
+
+<Layout title="Welcome to Astro with React!">
+    <main>
+        <NavBar client:only />
+        <Home client:only />
+        <AboutMe client:only />
+        <Technologies />
+        <Projects client:only />
+        <Contact client:only />
+    </main>
+</Layout>
+
+<style>
+    main {
+        color: white;
+    }
+    h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0;
+    }
+    .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100%;
+        background-position: 0%;
+    }
+    .instructions {
+        line-height: 1.6;
+        border: 1px solid rgba(var(--accent), 25%);
+        background-color: white;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        max-width: 60ch;
+        margin-inline: auto;
+    }
+    .instructions code {
+        font-size: 0.875em;
+        font-weight: bold;
+        background: rgba(var(--accent), 12%);
+        color: rgb(var(--accent));
+        border-radius: 4px;
+        padding: 0.3em 0.45em;
+    }
+    .instructions strong {
+        color: rgb(var(--accent));
+    }
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 1rem;
+        padding: 0;
+    }
+    ul {
+        max-width: 60ch;
+        margin-inline: auto;
+    }
+</style>
