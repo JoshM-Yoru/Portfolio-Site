@@ -4,8 +4,17 @@ import YoutubeLogo from "../assets/youtube.png";
 import WeatherLogo from "../assets/weather.png";
 ---
 
-<h2>Projects</h2>
 <div class="container">
+    <div class="project-info-wrapper">
+        <p class="projects-intro">Projects</p>
+        <p class='project-info"'>
+            <span style="margin-left: 3ch;">This</span> is a collection of the projects
+            I'm most proud of. Some of which are done with a group of developers,
+            others are solo projects. Included are links to the project's repository
+            and either a demo show on youtube or the actual static site that could
+            be used.
+        </p>
+    </div>
     <div class="project-wrapper ecommerce-site">
         <div class="project-body">
             <h3>NAJ Clothing</h3>
@@ -75,6 +84,14 @@ import WeatherLogo from "../assets/weather.png";
         justify-content: center;
     }
 
+    .projects-intro {
+        font-size: 2em;
+    }
+
+    .project-info-wrapper {
+        font-size: 1.2em;
+    }
+
     h2 {
         margin-block: 1.5rem;
     }
@@ -82,7 +99,7 @@ import WeatherLogo from "../assets/weather.png";
     h3 {
         width: 100%;
         text-align: right;
-        margin-top: -3%;
+        margin-top: -1%;
         padding: 0.5rem;
         color: #2d2e45;
     }
@@ -136,7 +153,6 @@ import WeatherLogo from "../assets/weather.png";
     .project-wrapper:hover .project-body,
     .project-wrapper:focus-within .project-body {
         transform: translateY(0);
-        transition-delay: 100ms;
         transition-delay: 450ms;
     }
 
@@ -148,7 +164,6 @@ import WeatherLogo from "../assets/weather.png";
         min-height: 100%;
         width: 100%;
         background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 0.7));
-        /* background: hsl(0 0% 0% / 0.5); */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -158,7 +173,7 @@ import WeatherLogo from "../assets/weather.png";
     @media (hover) {
         .underline {
             transform: scaleX(0);
-            transition: transform 400ms ease;
+            transition: transform 200ms ease;
             transform-origin: right;
         }
         .project-wrapper {
@@ -166,10 +181,10 @@ import WeatherLogo from "../assets/weather.png";
         }
         .project-body {
             transform: translateY(75%);
-            transition: transform 600ms ease;
+            transition: transform 300ms ease;
         }
         a {
-            transition: background 400ms linear;
+            transition: background 200ms linear;
         }
     }
 
@@ -187,8 +202,9 @@ import WeatherLogo from "../assets/weather.png";
         text-align: center;
         display: flex;
         flex-direction: column;
-        color: white;
         border-radius: 5px;
+        color: #bdcad9;
+        font-weight: bold;
     }
 
     a:hover {
@@ -211,6 +227,7 @@ import WeatherLogo from "../assets/weather.png";
     }
 
     a:visited {
-        color: white;
+        color: #bdcad9;
+        font-weight: bold;
     }
 </style>

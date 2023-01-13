@@ -149,6 +149,7 @@ const { title } = Astro.props;
         <div class="ground"></div>
         <div class="sun"></div>
         <img src={PalmTree} class="tree" />
+        <img src={PalmTree} class="tree two" />
         <slot />
     </body>
 </html>
@@ -202,7 +203,7 @@ const { title } = Astro.props;
         background: var(--background-gradient);
         min-height: 100vh;
         background-size: cover;
-        color: white;
+        color: #bdcad9;
         width: 1100px;
         display: flex;
         flex-direction: column;
@@ -340,7 +341,13 @@ const { title } = Astro.props;
         position: absolute;
         z-index: 3;
         right: 10vw;
-        bottom: 25vh;
+        bottom: 27vh;
+    }
+
+    .two {
+        right: 15vw;
+        bottom: 24vh;
+        transform: scaleX(-1);
     }
 
     .container {

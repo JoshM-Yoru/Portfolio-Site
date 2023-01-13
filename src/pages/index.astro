@@ -1,13 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import Home from "../components/Home";
+import Home from "../components/Home.astro";
+import ContactMe from "../components/ContactMe";
 ---
 
 <Layout title="Welcome to My Portfolio!">
     <main>
         <Navbar />
-        <Home client:only />
+        <Home />
+        <ContactMe />
     </main>
 </Layout>
 
