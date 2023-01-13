@@ -24,7 +24,7 @@ import Icon from "astro-icon";
             Full Stack Developer, Vim Enthusiast, Mediocore Chess Player, and
             Father of One.
         </p>
-        <p class"intro">
+        <p class="intro">
             Hi! I am <span class="name">Joshua Maciel</span> and I'm Full Stack Software
             Engineer with a Front End focus, located in the sunny Tampa, FL.
         </p>
@@ -46,6 +46,15 @@ import Icon from "astro-icon";
         font-size: 1.2rem;
     }
 
+    @media (max-width: 600px) {
+        .intro-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: min(60ch, max(85%, 300px));
+            font-size: 1.2rem;
+        }
+    }
+
     .highlight {
         font-size: 2.5rem;
         font-weight: bold;
@@ -53,8 +62,7 @@ import Icon from "astro-icon";
     }
 
     .intro {
-        margin: 1rem 0;
-        padding: 0 1rem;
+        margin: 0.5rem 0;
     }
 
     .name {
@@ -89,12 +97,8 @@ import Icon from "astro-icon";
         height: 30px;
         width: auto;
         color: #448a8e;
-        transition: transform 200ms ease;
+        transition: transform 200ms ease, color 400ms linear;
         padding: 0;
-    }
-
-    [astro-icon]::after {
-        color: #0b0d23;
     }
 
     [astro-icon]:hover {
@@ -111,4 +115,3 @@ import Icon from "astro-icon";
         color: #0b0d23;
     }
 </style>
-

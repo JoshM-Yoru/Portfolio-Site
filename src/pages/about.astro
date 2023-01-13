@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import AboutMe from "../components/AboutMe";
 import Technologies from "../components/Technologies.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="About Me">
@@ -10,5 +11,6 @@ import Technologies from "../components/Technologies.astro";
         <Navbar />
         <AboutMe client:only />
         <Technologies />
+        <Footer />
     </main>
 </Layout>
