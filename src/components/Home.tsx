@@ -3,7 +3,6 @@ import selfPortrait from "../assets/meb&w.jpg"
 
 const Container = styled.div`
     padding: 1rem;
-    height: fit-content;
     margin: auto;
     width: 700px;
 `

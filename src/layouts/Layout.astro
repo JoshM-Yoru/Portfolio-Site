@@ -1,4 +1,6 @@
 ---
+import PalmTree from "../assets/palmtree.png";
+
 export interface Props {
     title: string;
 }
@@ -16,8 +18,137 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <div class="rect-2"></div>
-        <div class="circ-1"></div>
+        <div class="overlay"></div>
+        <div class="overlay glitch"></div>
+        <div class="building-1">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building-2">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building-3">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="ground"></div>
+        <div class="sun"></div>
+        <img src={PalmTree} class="tree" />
         <slot />
     </body>
 </html>
@@ -53,6 +184,14 @@ const { title } = Astro.props;
             background-position: right;
         }
     }
+    @keyframes bg-animation-top {
+        0% {
+            background-position: top;
+        }
+        100% {
+            background-position: bottom;
+        }
+    }
 
     body {
         display: flex;
@@ -62,7 +201,6 @@ const { title } = Astro.props;
     main {
         background: var(--background-gradient);
         min-height: 100vh;
-        height: fit-content;
         background-size: cover;
         color: white;
         width: 1100px;
@@ -73,11 +211,13 @@ const { title } = Astro.props;
         border-right: 1px solid #444;
         z-index: 4;
     }
-    .rect-1 {
+
+    .building-1 {
         position: absolute;
-        height: 40vh;
-        width: 100vw;
-        top: 100px;
+        height: 300px;
+        width: 150px;
+        left: 5vw;
+        bottom: 20vh;
         z-index: 3;
         background-image: linear-gradient(
             45deg,
@@ -88,12 +228,40 @@ const { title } = Astro.props;
         );
         background-size: 400%;
         animation: bg-animation 40s infinite alternate;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
     }
-    .rect-2 {
+
+    .building-2 {
         position: absolute;
-        height: 30vh;
-        width: 100vw;
-        bottom: 0;
+        height: 300px;
+        width: 150px;
+        left: 10vw;
+        bottom: 16vh;
+        z-index: 1;
+        background-image: linear-gradient(
+            45deg,
+            #010429,
+            #170133,
+            #350138,
+            #00464a
+        );
+        background-size: 400%;
+        animation: bg-animation 40s infinite alternate;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .building-3 {
+        position: absolute;
+        height: 300px;
+        width: 150px;
+        left: 17vw;
+        bottom: 18vh;
         z-index: 2;
         background-image: linear-gradient(
             45deg,
@@ -104,6 +272,37 @@ const { title } = Astro.props;
         );
         background-size: 400%;
         animation: bg-animation 40s infinite alternate;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .window {
+        background-color: rgba(232, 240, 158, 0.9);
+        z-index: 2;
+        height: 15px;
+        width: 15px;
+        margin: 5px;
+        border: 1px solid white;
+        box-shadow: 0 0 4px 1px rgba(232, 240, 158, 0.8);
+    }
+
+    .ground {
+        position: absolute;
+        height: 30vh;
+        width: 100vw;
+        bottom: 0;
+        z-index: 3;
+        background-image: linear-gradient(
+            10deg,
+            #010429,
+            #170133,
+            #350138,
+            #00464a
+        );
+        background-size: 400%;
+        animation: bg-animation 50s infinite alternate;
     }
 
     @keyframes glow-animation {
@@ -115,7 +314,7 @@ const { title } = Astro.props;
         }
     }
 
-    .circ-1 {
+    .sun {
         position: absolute;
         height: 80vh;
         width: 80vh;
@@ -131,10 +330,59 @@ const { title } = Astro.props;
             #010429
         );
         background-size: 400%;
-        animation: bg-animation 40s infinite alternate,
+        animation: bg-animation 20s infinite alternate,
             glow-animation 4s infinite alternate;
     }
+
+    .tree {
+        height: 130px;
+        width: auto;
+        position: absolute;
+        z-index: 3;
+        right: 10vw;
+        bottom: 25vh;
+    }
+
     .container {
         padding: 1.5rem;
+    }
+
+    .overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 4;
+        background-color: transparent;
+        background-size: 10px 10px, 10px 10px;
+        background-position: -1px -1px, -1px -1px;
+        background-image: linear-gradient(
+                rgba(255, 255, 255, 0.05) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.05) 1px,
+                transparent 1px
+            );
+        mix-blend-mode: difference;
+    }
+    .glitch {
+        clip-path: polygon(0 0, 100% 0, 100% 0.5em, 0 0.5em);
+        animation: glitch 10s linear infinite;
+        transform: translatex(0.1rem);
+    }
+
+    @keyframes glitch {
+        to {
+            clip-path: polygon(
+                0 calc(100% - 0.5em),
+                100% calc(100% - 0.5em),
+                0 100%,
+                0 100%
+            );
+        }
     }
 </style>

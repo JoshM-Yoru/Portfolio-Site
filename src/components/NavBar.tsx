@@ -9,7 +9,7 @@ const Container = styled.div`
         display: flex;
         justify-content: center;
         height: fit-content;
-        z-index: 2;
+        z-index: 9;
 `
 const MenuWrapper = styled.ul`
         display: flex;
