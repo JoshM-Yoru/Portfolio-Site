@@ -26,6 +26,9 @@ const Name = styled.p`
     background-position: 0%;
     font-size: 2.5rem;
     text-align: right;
+    &:hover {
+        animation: bg-animation 4s infinite alternate;
+    }
 `
 const ImageWrapper = styled.div`
     max-height: 365px;

@@ -1,7 +1,7 @@
 ---
-import GithubLogo from "../assets/GithubLogo.png"
-import YoutubeLogo from "../assets/youtube.png"
-import WeatherLogo from "../assets/weather.png"
+import GithubLogo from "../assets/GithubLogo.png";
+import YoutubeLogo from "../assets/youtube.png";
+import WeatherLogo from "../assets/weather.png";
 ---
 
 <h2>Projects</h2>
@@ -9,13 +9,17 @@ import WeatherLogo from "../assets/weather.png"
     <div class="project-wrapper ecommerce-site">
         <div class="project-body">
             <h3>NAJ Clothing</h3>
+            <div class="underline"></div>
             <div class="project-links">
-                <a href="https://github.com/JoshM-Yoru/ecommerce-project" target="_blank">
+                <a
+                    href="https://github.com/JoshM-Yoru/ecommerce-project"
+                    target="_blank"
+                >
                     <img src={GithubLogo} alt="Github Logo" class="github" />
                     Repo
                 </a>
                 <a href="https://youtu.be/ECdx8Kc_1Wc" target="_blank">
-                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube"/>
+                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" />
                     Demo
                 </a>
             </div>
@@ -24,13 +28,17 @@ import WeatherLogo from "../assets/weather.png"
     <div class="project-wrapper goodbank-app">
         <div class="project-body">
             <h3>GoodBank</h3>
+            <div class="underline"></div>
             <div class="project-links">
-                <a href="https://github.com/JoshM-Yoru/Banking-App" target="_blank">
+                <a
+                    href="https://github.com/JoshM-Yoru/Banking-App"
+                    target="_blank"
+                >
                     <img src={GithubLogo} alt="Github Logo" class="github" />
                     Repo
                 </a>
                 <a href="https://youtu.be/ECdx8Kc_1Wc" target="_blank">
-                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube"/>
+                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" />
                     Demo
                 </a>
             </div>
@@ -39,13 +47,20 @@ import WeatherLogo from "../assets/weather.png"
     <div class="project-wrapper weather-app">
         <div class="project-body">
             <h3>Weather App</h3>
+            <div class="underline"></div>
             <div class="project-links">
-                <a href="https://github.com/JoshM-Yoru/weather-app" target="_blank">
+                <a
+                    href="https://github.com/JoshM-Yoru/weather-app"
+                    target="_blank"
+                >
                     <img src={GithubLogo} alt="Github Logo" class="github" />
                     Repo
                 </a>
-                <a href="https://joshm-yoru.github.io/weather-app/" target="_blank">
-                    <img src={WeatherLogo} alt="Weather Logo" class="weather"/>
+                <a
+                    href="https://joshm-yoru.github.io/weather-app/"
+                    target="_blank"
+                >
+                    <img src={WeatherLogo} alt="Weather Logo" class="weather" />
                     Site
                 </a>
             </div>
@@ -60,7 +75,7 @@ import WeatherLogo from "../assets/weather.png"
         justify-content: center;
     }
 
-    h2{
+    h2 {
         margin-block: 1.5rem;
     }
 
@@ -69,18 +84,30 @@ import WeatherLogo from "../assets/weather.png"
         text-align: right;
         margin-top: -3%;
         padding: 0.5rem;
+        color: #2d2e45;
+    }
+
+    .underline {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 45%;
+        background: linear-gradient(90deg, #d134b7 15%, #787ff4 80%);
+        background-size: 100%;
+        top: 20%;
+        right: 0;
     }
 
     .ecommerce-site {
         background-image: url(../assets/NAJclothing.png);
     }
 
-    .goodbank-app { 
+    .goodbank-app {
         background-image: url(../assets/goodbankwelcome.png);
     }
 
-    .goodbank-app  h3 {
-        color: #2d2e45;
+    .weather-app h3 {
+        color: white;
     }
 
     .weather-app {
@@ -93,8 +120,8 @@ import WeatherLogo from "../assets/weather.png"
         max-width: 400px;
         aspect-ratio: 1.9;
         overflow: hidden;
-        transition: transform 500ms ease;
         margin: 1.5rem 0.5rem;
+        position: relative;
     }
 
     .project-wrapper:hover,
@@ -102,10 +129,15 @@ import WeatherLogo from "../assets/weather.png"
         transform: scale(1.05);
     }
 
+    .project-wrapper:hover .underline {
+        transform: scaleX(1);
+    }
+
     .project-wrapper:hover .project-body,
     .project-wrapper:focus-within .project-body {
         transform: translateY(0);
         transition-delay: 100ms;
+        transition-delay: 450ms;
     }
 
     .project-wrapper:focus-within .project-body {
@@ -115,28 +147,30 @@ import WeatherLogo from "../assets/weather.png"
     .project-body {
         min-height: 100%;
         width: 100%;
-        background: linear-gradient(
-            hsl(0 0% 0% / 0),
-            hsl(0 0% 0% / 0.7)
-            );
+        background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 0.7));
         /* background: hsl(0 0% 0% / 0.5); */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        transform: translateY(75%);
-        transition: transform 500ms ease;
     }
 
-    .project-body > *:not(h3) {
-        opacity: 0;
-        transition: opacity 800ms ease-in;
-    }
-
-    .project-wrapper:hover .project-body > *,
-    .project-wrapper:focus-within .project-body > * {
-        opacity: 1;
-        transition-delay: 400ms;
+    @media (hover) {
+        .underline {
+            transform: scaleX(0);
+            transition: transform 400ms ease;
+            transform-origin: right;
+        }
+        .project-wrapper {
+            transition: transform 400ms ease;
+        }
+        .project-body {
+            transform: translateY(75%);
+            transition: transform 600ms ease;
+        }
+        a {
+            transition: background 400ms linear;
+        }
     }
 
     .project-links {
@@ -155,11 +189,10 @@ import WeatherLogo from "../assets/weather.png"
         flex-direction: column;
         color: white;
         border-radius: 5px;
-        transition: background 400ms linear;
     }
 
     a:hover {
-        background: rgba(0,0,0,0.2);
+        background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(1px);
         -webkit-backdrop-filter: blur(1px);
     }
@@ -170,7 +203,7 @@ import WeatherLogo from "../assets/weather.png"
 
     .youtube {
         height: 55px;
-        margin: 10px 0 12px 0
+        margin: 10px 0 12px 0;
     }
 
     .weather {
