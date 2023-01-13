@@ -62,7 +62,7 @@ import { Icon } from "astro-icon";
         background-image: var(--accent-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-size: 500%;
+        background-size: 100%;
         background-position: 0%;
     }
 
@@ -92,6 +92,10 @@ import { Icon } from "astro-icon";
         margin: 10px;
         color: #448a8e;
         transition: transform 200ms ease;
+    }
+
+    [astro-icon]::after {
+        color: #0b0d23;
     }
 
     [astro-icon]:hover {
