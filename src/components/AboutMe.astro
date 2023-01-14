@@ -1,0 +1,170 @@
+---
+import selfPortrait from "../assets/meb&w.jpg";
+---
+
+<div class="container">
+    <div class="wrapper">
+        <div class="image-wrapper">
+            <img class="portfolio-image" src={selfPortrait} />
+        </div>
+        <div class="design"></div>
+    </div>
+    <div class="about-me-wrapper">
+        <p class="intro">
+            I am <span>Joshua Maciel</span>. I live in Tampa, FL where I was
+            born and raised.
+        </p>
+        <p class="about-me">
+            I've always enjoyed working with computers since I was young as my
+            father introduced me to them since he always worked on them. I
+            remember thinking back to when I used to have two computers in my
+            room. One with Windows 95 and the other with Windows 3.1. I loved
+            using both even though most of the time was to play Solitare.
+        </p>
+        <p class="about-me">
+            Today, I still enjoy working with computers, just now I love
+            creating websites for fun learning new technologies and using what I
+            already know. I am currently working as Full Stack Developer using
+            React for the Front End and Java for the Back End both of which I
+            enjoy but I do prefer the Front End of things and very much enjoy
+            playing with CSS. If you are interested in working with me you can
+            reach me on social media or through my contact form on the home
+            page.
+        </p>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        position: relative;
+    }
+
+    .image-wrapper {
+        height: 20rem;
+        width: 20rem;
+        margin: 0 auto;
+        border-radius: 3rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+
+    .portfolio-image {
+        margin: -1.4rem auto;
+        height: 30rem;
+        width: auto;
+    }
+
+    .about-me-wrapper {
+        padding: 0 3.5rem 0 0;
+        width: 60%;
+    }
+
+    .intro {
+        font-size: 2.5rem;
+        font-weight: bold;
+        padding-bottom: 1rem;
+    }
+
+    .about-me {
+        font-size: 1.1rem;
+        padding-bottom: 1rem;
+    }
+
+    span {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100%;
+        background-position: 0%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #0b0d23;
+    }
+
+    .design {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: -2ch;
+        width: 20rem;
+        height: 10.5rem;
+        z-index: -1;
+        background-color: #22686c;
+        background-size: 15px 15px, 15px 15px;
+        background-position: -1px -1px, -1px -1px;
+        background-image: linear-gradient(
+                rgba(11, 13, 35, 1) 11px,
+                transparent 11px
+            ),
+            linear-gradient(90deg, rgba(11, 13, 35, 1) 11px, transparent 11px);
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+        .design {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 5ch;
+            height: 20rem;
+            width: 10.5rem;
+            z-index: -1;
+            background-color: #22686c;
+            background-size: 15px 15px, 15px 15px;
+            background-position: -1px -1px, -1px -1px;
+            background-image: linear-gradient(
+                    rgba(11, 13, 35, 1) 11px,
+                    transparent 11px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(11, 13, 35, 1) 11px,
+                    transparent 11px
+                );
+        }
+        .about-me-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+            width: 95%;
+            padding: 1rem;
+        }
+        .intro {
+            font-size: 2.3rem;
+            font-weight: bold;
+            padding-bottom: 1rem;
+        }
+
+        .about-me {
+            font-size: 1.2rem;
+            padding-bottom: 1rem;
+        }
+    }
+</style>
