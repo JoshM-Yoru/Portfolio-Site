@@ -97,6 +97,12 @@ import Icon from "astro-icon";
         background: #00464a;
     }
 
+    @media (hover: none) {
+        .send {
+            transition: background 800ms ease, transform 300ms ease;
+        } 
+    }
+
     textarea {
         margin: 1rem 0 0.5rem 0;
         padding: 0.5rem 0.8rem;

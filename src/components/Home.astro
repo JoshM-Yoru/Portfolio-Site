@@ -97,14 +97,20 @@ import Icon from "astro-icon";
         height: 40px;
         width: auto;
         color: #448a8e;
-        transition: transform 200ms ease, color 400ms linear;
         padding: 0;
+        transition: transform 200ms ease, color 400ms linear;
         margin-inline: 0.5rem;
     }
 
     [astro-icon]:hover {
         color: #d134b7;
         transform: scale(1.3);
+    }
+
+    @media (hover: none) {
+        [astro-icon] {
+            transition: transform 200ms ease, color 400ms linear;
+        } 
     }
 
     a {
