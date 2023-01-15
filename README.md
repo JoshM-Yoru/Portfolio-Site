@@ -7,3 +7,4 @@
 + Add a slight parallax when scrolling
 + Stop certain animations from happening on mobile
 + Fix accent boxes on about page for mobile
++ Add on scroll animations

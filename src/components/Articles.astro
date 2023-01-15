@@ -1,0 +1,23 @@
+---
+import VideoCard from "../components/VideoCard.astro"
+---
+
+<div class="container">
+    <h2>Things That Interest Me</h2>
+        <VideoCard title="Vim in 2 Minutes" body="Quick and to the point Vim keybind walkthrough with a link to a diagram in the video description." src="https://www.youtube.com/embed/E_8B_seg8AI" />
+        <VideoCard title="Leptos a Rust Full Stack WASM Framework" body="Video going over a new Rust framework that uses WASM and compares client-side rendering performance against React. Which is faster? Watch to find out!" src="https://www.youtube.com/embed/7ap3CkBEpOE" />
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: min(85%, 660px);
+        margin: 1rem auto 3rem auto;
+        padding: 0;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+</style>
