@@ -56,6 +56,7 @@ import selfPortrait from "../assets/meb&w.jpg";
         overflow: hidden;
         display: flex;
         justify-content: center;
+        transform: rotate(-5deg);
     }
 
     .portfolio-image {
@@ -133,20 +134,20 @@ import selfPortrait from "../assets/meb&w.jpg";
             position: absolute;
             bottom: 0;
             right: 5ch;
-            height: 20rem;
-            width: 10.5rem;
+            height: 300px;
+            width: 200px;
             z-index: -1;
             background-color: #22686c;
-            background-size: 15px 15px, 15px 15px;
-            background-position: -1px -1px, -1px -1px;
+            background-size: 10px 10px 10px 10px;
+            background-position: -5px -5px -5px -5px;
             background-image: linear-gradient(
-                    rgba(4, 5, 27, 1) 11px,
-                    transparent 11px
+                    rgba(4, 5, 27, 1) 10px,
+                    transparent 10px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(4, 5, 27, 1) 11px,
-                    transparent 11px
+                    rgba(4, 5, 27, 1) 10px,
+                    transparent 10px
                 );
         }
         .about-me-wrapper {
@@ -166,6 +167,9 @@ import selfPortrait from "../assets/meb&w.jpg";
         .about-me {
             font-size: 1.2rem;
             padding-bottom: 1rem;
+        }
+        .image-wrapper {
+            transform: rotate(0deg);
         }
     }
 </style>

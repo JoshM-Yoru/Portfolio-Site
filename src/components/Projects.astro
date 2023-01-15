@@ -2,6 +2,7 @@
 import GithubLogo from "../assets/GithubLogo.png";
 import YoutubeLogo from "../assets/youtube.png";
 import WeatherLogo from "../assets/weather.png";
+import SunLogo from "../assets/sun.png"
 ---
 
 <div class="container">
@@ -23,11 +24,11 @@ import WeatherLogo from "../assets/weather.png";
                     href="https://github.com/JoshM-Yoru/ecommerce-project"
                     target="_blank"
                 >
-                    <img src={GithubLogo} alt="Github Logo" class="github" />
+                    <img src={GithubLogo} alt="Github Logo" class="github" loading="lazy"  />
                     Repo
                 </a>
                 <a href="https://youtu.be/ECdx8Kc_1Wc" target="_blank">
-                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" />
+                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" loading="lazy"  />
                     Demo
                 </a>
             </div>
@@ -42,11 +43,11 @@ import WeatherLogo from "../assets/weather.png";
                     href="https://github.com/JoshM-Yoru/Banking-App"
                     target="_blank"
                 >
-                    <img src={GithubLogo} alt="Github Logo" class="github" />
+                    <img src={GithubLogo} alt="Github Logo" class="github" loading="lazy"  />
                     Repo
                 </a>
                 <a href="https://youtu.be/ECdx8Kc_1Wc" target="_blank">
-                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" />
+                    <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" loading="lazy"  />
                     Demo
                 </a>
             </div>
@@ -61,14 +62,36 @@ import WeatherLogo from "../assets/weather.png";
                     href="https://github.com/JoshM-Yoru/weather-app"
                     target="_blank"
                 >
-                    <img src={GithubLogo} alt="Github Logo" class="github" />
+                    <img src={GithubLogo} alt="Github Logo" class="github" loading="lazy"  />
                     Repo
                 </a>
                 <a
                     href="https://joshm-yoru.github.io/weather-app/"
                     target="_blank"
                 >
-                    <img src={WeatherLogo} alt="Weather Logo" class="weather" />
+                    <img src={WeatherLogo} alt="Weather Logo" class="weather" loading="lazy" />
+                    Site
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-wrapper portfolio">
+        <div class="project-body">
+            <h3>Portfolio Site</h3>
+            <div class="underline"></div>
+            <div class="project-links">
+                <a
+                    href="https://github.com/JoshM-Yoru/Portfolio-Site"
+                    target="_blank"
+                >
+                    <img src={GithubLogo} alt="Github Logo" class="github" loading="lazy" />
+                    Repo
+                </a>
+                <a
+                    href="https://joshua-maciel-portfolio.vercel.app"
+                    target="_blank"
+                >
+                    <img src={SunLogo} alt="Sun Logo" class="github" loading="lazy" />
                     Site
                 </a>
             </div>
@@ -128,6 +151,11 @@ import WeatherLogo from "../assets/weather.png";
 
     .weather-app {
         background-image: url(../assets/weatherapp.png);
+    }
+
+    .portfolio {
+        background-image: url(../assets/portfoliosite.png);
+        background-size: cover;
     }
 
     .project-wrapper {
