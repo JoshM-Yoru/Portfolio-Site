@@ -15,3 +15,4 @@ This portfolio is still a work in progress but you are able to visit the site: [
 ##Things to be done on the experimental branch
 + Add a parallax animation
 + Refactor code with more responsiveness
++ Swap to using Pictures to change pngs to webp images for improved performance

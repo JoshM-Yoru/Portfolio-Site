@@ -15,24 +15,11 @@ route === "projects" ? (projects = "#d134b7") : (projects = "#bdcad9");
 ---
 
 <div class="container">
-    <ul class="menu-wrapper">
-        <li>
-            <a href="/" aria-label="Home Page">
-                <button class="home" style=`color: ${home}`>Home</button>
-            </a>
-        </li>
-        <li>
-            <a href="/about" aria-label="About Page">
-                <button class="about" style=`color: ${about}`>About</button>
-            </a>
-        </li>
-        <li>
-            <a href="/projects" aria-label="Projects Page">
-                <button class="projects" style=`color: ${projects}`>Projects</button
-                >
-            </a>
-        </li>
-    </ul>
+    <div class="menu-wrapper">
+            <a href="/" aria-label="Home Page"><button class="home" style=`color: ${home}`>Home</button></a>
+            <a href="/about" aria-label="About Page"><button class="about" style=`color: ${about}`>About</button></a>
+            <a href="/projects" aria-label="Projects Page"><button class="projects" style=`color: ${projects}`>Projects</button></a>
+    </div>
 </div>
 
 <style>
