@@ -1,16 +1,30 @@
 ---
+export interface Props {
+    route: string;
+}
+
+const { route } = Astro.props;
+
+let home: string = "";
+let about: string = "";
+let projects: string = "";
+
+route === "home" ? (home = "#d134b7") : (home = "#bdcad9");
+route === "about" ? (about = "#d134b7") : (about = "#bdcad9");
+route === "projects" ? (projects = "#d134b7") : (projects = "#bdcad9");
 ---
 
 <div class="container">
     <ul class="menu-wrapper">
         <a href="/">
-            <button>Home</button>
+            <button class="home" style=`color: ${home}`>Home</button>
         </a>
         <a href="/about">
-            <button class="about">About</button>
+            <button class="about" style=`color: ${about}`>About</button>
         </a>
         <a href="/projects">
-            <button class="projects">Projects</button>
+            <button class="projects" style=`color: ${projects}`>Projects</button
+            >
         </a>
     </ul>
 </div>

@@ -1,5 +1,5 @@
 ---
-import VideoCard from "../components/VideoCard.astro";
+import VideoCard from "../components/VideoCard.tsx";
 ---
 
 <div class="container">
@@ -8,19 +8,25 @@ import VideoCard from "../components/VideoCard.astro";
         title="Color-fill Animation"
         src="../assets/csscolorfill.jpg"
         body="Kevin Powell creates a cool color-fill animation using masks created in Photoshop."
-        href="https://www.youtube.com/embed/dldpud1PuL8"
+        href="https://www.youtube.com/embed/dldpud1PuL8?autoplay=1&mute=1"
+        id="5SXsDox.jpg"
+        client:load
     />
     <VideoCard
         title="Vim in 2 Minutes"
         src="../assets/vim2mins.jpg"
         body="The Primeagen makes a quick and to the point Vim keybind walkthrough with a link to a diagram in the video description."
-        href="https://www.youtube.com/embed/E_8B_seg8AI"
+        href="https://www.youtube.com/embed/E_8B_seg8AI?autoplay=1&mute=1"
+        id="Wpz6Ysl.jpg"
+        client:load
     />
     <VideoCard
         title="Leptos a Rust Full Stack WASM Framework"
         src="../assets/leptostest.jpg"
         body="The Primeagen going over a new Rust framework that uses WASM and compares client-side rendering performance against React. Which is faster? Watch to find out!"
-        href="https://www.youtube.com/embed/7ap3CkBEpOE"
+        href="https://www.youtube.com/embed/7ap3CkBEpOE?autoplay=1&mute=1"
+        id="UFQPamf.jpg"
+        client:load
     />
 </div>
 

@@ -97,10 +97,6 @@ const { title } = Astro.props;
         overflow-y: auto;
     }
 
-    .background-wrapper {
-        position: sticky;
-    }
-
     main {
         background: var(--background-gradient);
         min-height: 100vh;
@@ -200,7 +196,7 @@ const { title } = Astro.props;
 
     @keyframes glow-animation {
         0% {
-            box-shadow: 10px 20px 90px 50px rgba(53, 1, 56, 0.7);
+            box-shadow: 0 0 90px 60px rgba(53, 1, 56, 0.7);
         }
         100% {
             box-shadow: 0 0 30px 25px rgba(53, 1, 56, 0.5);
@@ -212,8 +208,8 @@ const { title } = Astro.props;
         height: 80vh;
         width: 80vh;
         right: 5vw;
-        transform: rotate(0.5turn);
-        border-radius: 50%;
+        transform: rotate(90deg);
+        border-radius: 80vh;
         z-index: 1;
         background-image: linear-gradient(
             45deg,
@@ -224,7 +220,7 @@ const { title } = Astro.props;
         );
         background-size: 400%;
         animation: bg-animation 20s infinite alternate,
-            glow-animation 4s infinite alternate;
+            glow-animation 3s ease infinite alternate;
     }
 
     .tree {
