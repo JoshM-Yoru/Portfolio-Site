@@ -21,8 +21,6 @@ const VideoCard: React.FC<Props> = ({ title, src, body, href, id }) => {
         setShowVideo(true);
     }
 
-    console.log(showVideo);
-
     return (
         <div className="link-card" >
             <h2 className="article-title">
