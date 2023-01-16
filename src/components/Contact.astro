@@ -11,20 +11,45 @@ import Icon from "astro-icon";
         Write me a message but be sure to check out the portfolio first! If you
         have a question I'll get back to you as soon as I can!
     </p>
-    <form class="contact-me">
+    <form
+        class="contact-me"
+        action="https://formspree.io/f/xwkjpven"
+        method="post"
+        onsubmit="this.submit(); this.reset(); return false;"
+    >
         <input
             class="your-name"
-            name="your-name"
+            name="name"
             type="text"
             placeholder="Your Name"
+            required
+        />
+        <input
+            class="your-email"
+            name="email"
+            type="text"
+            placeholder="Your Email"
+            required
         />
         <textarea
+            required
             class="your-message"
-            name="your-message"
+            name="message"
             placeholder="Your Message"></textarea>
-        <input type="button" class="send" value="Send" />
+        <input type="submit" class="send" value="Send" />
     </form>
 </div>
+
+<script>
+    const reset = () => {
+        const name = document.querySelector(".your-name");
+        const email = document.querySelector(".your-email");
+        const message = document.querySelector(".your-message");
+        name.value = "";
+        email.value = "";
+        name.value = "";
+    }
+</script>
 
 <style>
     .container {
@@ -69,7 +94,8 @@ import Icon from "astro-icon";
         width: 100%;
     }
 
-    .your-name {
+    .your-name,
+    .your-email {
         margin: 1rem 0 0.5rem 0;
         padding: 0.5rem 0.8rem;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -78,7 +104,9 @@ import Icon from "astro-icon";
         color: white;
     }
 
-    .your-name:focus, textarea:focus {
+    .your-name:focus,
+    .your-email:focus,
+    textarea:focus {
         outline: none;
         border: 2px solid #448a8e;
     }
@@ -105,7 +133,7 @@ import Icon from "astro-icon";
     @media (hover: none) {
         .send {
             transition: background 800ms ease, transform 300ms ease;
-        } 
+        }
     }
 
     textarea {

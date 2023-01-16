@@ -3,19 +3,26 @@ export interface Props {
     title: string;
     body: string;
     src: string;
+    href: string;
 }
 
-const { src, title, body } = Astro.props;
+const { src, title, body, href } = Astro.props;
 ---
 
 <div class="link-card">
-        <h2>
-            {title}
-        </h2>
-        <p>
-            {body}
-        </p>
-        <iframe loading="lazy" src={src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <h2>
+        {title}
+    </h2>
+    <p>
+        {body}
+    </p>
+    <iframe
+        loading="lazy"
+        src={href}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
 </div>
 
 <style>
@@ -24,7 +31,7 @@ const { src, title, body } = Astro.props;
         flex-direction: column;
         padding: 2rem;
         margin: 0.5rem 0;
-        background: rgba(50,50,50, 0.25);
+        background: rgba(50, 50, 50, 0.25);
         border-radius: 7px;
         width: 100%;
     }
