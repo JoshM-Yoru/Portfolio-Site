@@ -19,10 +19,13 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <meta name="description" content="Joshua Maciel's Full Stack Software Developer Portfolio to be shared with the world." />
+        <meta
+            name="description"
+            content="Joshua Maciel's Full Stack Software Developer Portfolio to be shared with the world."
+        />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <meta property="og:image" content={PortfolioImage} alt="Portfolio Image" />
+        <meta property="og:image" content={PortfolioImage} />
         <title>{title}</title>
     </head>
     <body>
@@ -44,6 +47,7 @@ const { title } = Astro.props;
         <slot />
     </body>
 </html>
+
 <style is:global>
     * {
         padding: 0;
@@ -66,9 +70,13 @@ const { title } = Astro.props;
         font-family: "Roboto Slab", system-ui, serif;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
         font-family: "Roboto", sans-serif;
         font-weight: 900;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     button {
@@ -76,7 +84,8 @@ const { title } = Astro.props;
         font-weight: 700;
     }
 
-    textarea, input {
+    textarea,
+    input {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
     }
@@ -344,4 +353,39 @@ const { title } = Astro.props;
         }
     }
 
+    .hidden {
+        opacity: 0;
+        transition: all 500ms linear;
+        /* filter: blur(3px); */
+        /* transform: translateX(-100%); */
+        /* transform-origin: left; */
+    }
+
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    @media (prefers-reduced-motion) {
+        .hidden {
+            transition: none;
+        }
+    }
 </style>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>

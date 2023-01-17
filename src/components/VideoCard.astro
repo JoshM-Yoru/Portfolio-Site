@@ -7,7 +7,7 @@ export const showVideo = atom<boolean>(false);
 
 export const setShowVideo = (b: boolean) => {
     showVideo.set(b);
-}
+};
 export interface Props {
     title: string;
     body: string;
@@ -21,8 +21,6 @@ const { src, title, body, href, id } = Astro.props;
 const imageLinkPrefix: string = "https://i.imgur.com/";
 
 const linkedImage = imageLinkPrefix + id;
-
-
 ---
 
 <div class="link-card">
@@ -33,21 +31,34 @@ const linkedImage = imageLinkPrefix + id;
         {body}
     </p>
     <div class="video-container" onclick="handleVideo()">
-        {showVideo ?
-            <iframe
-                loading="lazy"
-                src={href}
-                title="YouTube video player"
-                frameBorder={"0"}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen></iframe>
-            :
-            <div class="lazy-loading-content image-container">
-                <div class="preview-wrapper">
-                    <img class="preview-image" src={linkedImage} alt={title} />
-                    <button><img class="play-button" src={YoutubeLogo} alt="play" /></button>
+        {
+            showVideo ? (
+                <iframe
+                    loading="lazy"
+                    src={href}
+                    title="YouTube video player"
+                    frameBorder={"0"}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                />
+            ) : (
+                <div class="lazy-loading-content image-container">
+                    <div class="preview-wrapper">
+                        <img
+                            class="preview-image"
+                            src={linkedImage}
+                            alt={title}
+                        />
+                        <button>
+                            <img
+                                class="play-button"
+                                src={YoutubeLogo}
+                                alt="play"
+                            />
+                        </button>
+                    </div>
                 </div>
-            </div>
+            )
         }
     </div>
 </div>
@@ -55,7 +66,7 @@ const linkedImage = imageLinkPrefix + id;
 <script client:load>
     function handleVideo() {
         setShowVideo(true);
-        console.log("test")
+        console.log("test");
     }
     /* <iframe */
     /*     loading="lazy" */
@@ -116,7 +127,8 @@ const linkedImage = imageLinkPrefix + id;
     p {
         margin: 0.5rem 0 1rem 0;
     }
-    iframe, .preview-wrapper {
+    iframe,
+    .preview-wrapper {
         margin: 0 auto;
     }
 

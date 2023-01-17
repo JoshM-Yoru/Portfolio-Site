@@ -1,9 +1,9 @@
 ---
-import VideoCard from "../components/VideoCard.tsx";
+import VideoCard from "../components/VideoCard";
 ---
 
 <div class="container">
-    <h2>Things That Interest Me</h2>
+    <h2 class="hidden">Things That Interest Me</h2>
     <VideoCard
         title="Color-fill Animation"
         src="../assets/csscolorfill.jpg"
@@ -41,5 +41,6 @@ import VideoCard from "../components/VideoCard.tsx";
     h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
+        width: fit-content;
     }
 </style>

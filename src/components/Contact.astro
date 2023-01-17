@@ -2,7 +2,7 @@
 import Icon from "astro-icon";
 ---
 
-<div class="container">
+<div class="container hidden">
     <div class="contact-title">
         <Icon name="carbon:email" />
         <h3>Contact Me</h3>
@@ -39,17 +39,6 @@ import Icon from "astro-icon";
         <input type="submit" class="send" value="Send" />
     </form>
 </div>
-
-<script>
-    const reset = () => {
-        const name = document.querySelector(".your-name");
-        const email = document.querySelector(".your-email");
-        const message = document.querySelector(".your-message");
-        name.value = "";
-        email.value = "";
-        name.value = "";
-    }
-</script>
 
 <style>
     .container {

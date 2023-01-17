@@ -11,9 +11,11 @@
 
 .article-title {
     margin: 0;
+    transition-delay: 50ms;
 }
 .article-body {
     margin: 0.5rem 0 1rem 0;
+    transition-delay: 100ms;
 }
 iframe, .preview-wrapper {
     margin: 0 auto;
@@ -30,6 +32,7 @@ iframe {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition-delay: 150ms;
 }
 
 .preview-wrapper {

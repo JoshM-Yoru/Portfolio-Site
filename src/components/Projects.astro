@@ -2,78 +2,84 @@
 import GithubLogo from "../assets/GithubLogo.png";
 import YoutubeLogo from "../assets/youtube.png";
 import WeatherLogo from "../assets/weather.png";
-import SunLogo from "../assets/sun.png"
+import SunLogo from "../assets/sun.png";
 ---
 
-<div class="container">
+<div class="container hidden">
     <div class="project-info-wrapper">
         <h2 class="projects-intro">Projects</h2>
-        <p class='project-info"'>
+        <p class="project-info hidden">
             This is a collection of the projects I'm most proud of. Some of
             which are done with a group of developers, others are solo projects.
             Included are links to the project's repository and either a demo
             show on youtube or the actual static site that could be used.
         </p>
     </div>
-    <div class="project-wrapper ecommerce-site">
+    <div class="hidden project-wrapper ecommerce-site">
         <div class="project-body">
             <h3>NAJ Clothing</h3>
             <div class="underline"></div>
             <div class="project-links">
                 <a
                     href="https://github.com/JoshM-Yoru/ecommerce-project"
-                    target="_blank" aria-label="Go To The Ecommerce Repository"
-
+                    target="_blank"
+                    aria-label="Go To The Ecommerce Repository"
                 >
                     <img src={GithubLogo} alt="Github Logo" class="github" />
                     Repo
                 </a>
-                <a href="https://youtu.be/ECdx8Kc_1Wc" target="_blank" aria-label="Go To Joshua Maciel's Demo of the Ecommerce Site"
->
+                <a
+                    href="https://youtu.be/ECdx8Kc_1Wc"
+                    target="_blank"
+                    aria-label="Go To Joshua Maciel's Demo of the Ecommerce Site"
+                >
                     <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" />
                     Demo
                 </a>
             </div>
         </div>
     </div>
-    <div class="project-wrapper goodbank-app">
+    <div class="hidden project-wrapper goodbank-app">
         <div class="project-body">
             <h3>GoodBank</h3>
             <div class="underline"></div>
             <div class="project-links">
                 <a
                     href="https://github.com/JoshM-Yoru/Banking-App"
-                    target="_blank" aria-label="Go To The Banking App Repository"
-
+                    target="_blank"
+                    aria-label="Go To The Banking App Repository"
                 >
                     <img src={GithubLogo} alt="Github Logo" class="github" />
                     Repo
                 </a>
-                <a href="https://youtu.be/MOwAA3xIp6o" target="_blank" aria-label="Go To Joshua Maciel's Demo of the Banking App"
->
+                <a
+                    href="https://youtu.be/MOwAA3xIp6o"
+                    target="_blank"
+                    aria-label="Go To Joshua Maciel's Demo of the Banking App"
+                >
                     <img src={YoutubeLogo} alt="Youtube Logo" class="youtube" />
                     Demo
                 </a>
             </div>
         </div>
     </div>
-    <div class="project-wrapper weather-app">
+    <div class="hidden project-wrapper weather-app">
         <div class="project-body">
             <h3>Weather App</h3>
             <div class="underline"></div>
             <div class="project-links">
                 <a
                     href="https://github.com/JoshM-Yoru/weather-app"
-                    target="_blank" aria-label="Go To Weather App Repository"
-
+                    target="_blank"
+                    aria-label="Go To Weather App Repository"
                 >
                     <img src={GithubLogo} alt="Github Logo" class="github" />
                     Repo
                 </a>
                 <a
                     href="https://joshm-yoru.github.io/weather-app/"
-                    target="_blank" aria-label="Go To The Hosted Weather App"
-
+                    target="_blank"
+                    aria-label="Go To The Hosted Weather App"
                 >
                     <img src={WeatherLogo} alt="Weather Logo" class="weather" />
                     Site
@@ -81,23 +87,23 @@ import SunLogo from "../assets/sun.png"
             </div>
         </div>
     </div>
-    <div class="project-wrapper portfolio">
+    <div class="hidden project-wrapper portfolio">
         <div class="project-body">
             <h3>Portfolio Site</h3>
             <div class="underline"></div>
             <div class="project-links">
                 <a
                     href="https://github.com/JoshM-Yoru/Portfolio-Site"
-                    target="_blank" aria-label="Go To The Repository For This Site"
-
+                    target="_blank"
+                    aria-label="Go To The Repository For This Site"
                 >
                     <img src={GithubLogo} alt="Github Logo" class="github" />
                     Repo
                 </a>
                 <a
                     href="https://joshua-maciel-portfolio.vercel.app"
-                    target="_blank" aria-label="Go To The Home Page"
-
+                    target="_blank"
+                    aria-label="Go To The Home Page"
                 >
                     <img src={SunLogo} alt="Sun Logo" class="weather" />
                     Site
@@ -172,6 +178,16 @@ import SunLogo from "../assets/sun.png"
         overflow: hidden;
         margin: 1.5rem 1rem;
         position: relative;
+    }
+
+    .project-wrapper:nth-child(2) {
+        transition-delay: 100ms;
+    }
+    .project-wrapper:nth-child(3) {
+        transition-delay: 200ms;
+    }
+    .project-wrapper:nth-child(4) {
+        transition-delay: 300ms;
     }
 
     .project-wrapper:hover,

@@ -4,24 +4,24 @@ import selfPortrait from "../assets/meb&w.jpg";
 
 <div class="container">
     <div class="wrapper">
-        <div class="image-wrapper">
-            <img class="portfolio-image" src={selfPortrait} />
+        <div class="image-wrapper hidden">
+            <img class="portfolio-image hidden" src={selfPortrait} />
         </div>
-        <div class="design"></div>
+        <div class="design hidden"></div>
     </div>
     <div class="about-me-wrapper">
-        <h2 class="intro">
+        <h2 class="intro hidden">
             I am <span>Joshua Maciel</span>. I live in Tampa, FL where I was
             born and raised.
         </h2>
-        <p class="about-me">
+        <p class="about-me hidden">
             I've always enjoyed working with computers since I was young as my
             father introduced me to them since he always worked on them. I
             remember thinking back to when I used to have two computers in my
             room. One with Windows 95 and the other with Windows 3.1. I loved
             using both even though most of the time was to play Solitare.
         </p>
-        <p class="about-me">
+        <p class="about-me hidden">
             Today, I still enjoy working with computers, just now I love
             creating websites for fun learning new technologies and using what I
             already know. I am currently working as Full Stack Developer using
@@ -29,8 +29,11 @@ import selfPortrait from "../assets/meb&w.jpg";
             enjoy but I do prefer the Front End of things and very much enjoy
             playing with CSS. If you are interested in working with me you can
             reach me on social media or through my contact form on the home
-            page. If you would like to look at my resume, click <a href="https://drive.google.com/file/d/1BLvF0kwAgcoYNtBqOdjOYGRwC0yFqYUM/view?usp=sharing" target="_blank" aria-label="Go To Joshua Maciel's Resume"
->here</a>.
+            page. If you would like to look at my resume, click <a
+                href="https://drive.google.com/file/d/1BLvF0kwAgcoYNtBqOdjOYGRwC0yFqYUM/view?usp=sharing"
+                target="_blank"
+                aria-label="Go To Joshua Maciel's Resume">here</a
+            >.
         </p>
     </div>
 </div>
@@ -79,6 +82,7 @@ import selfPortrait from "../assets/meb&w.jpg";
     .about-me {
         font-size: 1.1rem;
         padding-bottom: 1rem;
+        transition-delay: 300ms;
     }
 
     span {
@@ -105,6 +109,7 @@ import selfPortrait from "../assets/meb&w.jpg";
         width: 20rem;
         height: 10.5rem;
         z-index: -1;
+        transition-delay: 800ms;
         background-color: #22686c;
         background-size: 15px 15px, 15px 15px;
         background-position: -1px -1px, -1px -1px;
@@ -144,11 +149,7 @@ import selfPortrait from "../assets/meb&w.jpg";
                     rgba(4, 5, 27, 1) 10px,
                     transparent 10px
                 ),
-                linear-gradient(
-                    90deg,
-                    rgba(4, 5, 27, 1) 10px,
-                    transparent 10px
-                );
+                linear-gradient(90deg, rgba(4, 5, 27, 1) 10px, transparent 10px);
         }
         .about-me-wrapper {
             display: flex;
