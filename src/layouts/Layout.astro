@@ -4,6 +4,7 @@ import PortfolioImage from "../assets/portfoliosite.png";
 import Windows from "../components/Windows.astro";
 import "@fontsource/roboto-slab";
 import "@fontsource/roboto/900.css";
+import "@fontsource/roboto/700.css";
 import "@fontsource/roboto";
 
 export interface Props {
@@ -70,7 +71,12 @@ const { title } = Astro.props;
         font-weight: 900;
     }
 
-    button, textarea, input {
+    button {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+    }
+
+    textarea, input {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
     }
