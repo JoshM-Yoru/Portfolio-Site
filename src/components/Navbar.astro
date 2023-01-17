@@ -16,9 +16,17 @@ route === "projects" ? (projects = "#d134b7") : (projects = "#bdcad9");
 
 <div class="container">
     <div class="menu-wrapper">
-            <a href="/" aria-label="Home Page"><button class="home" style=`color: ${home}`>Home</button></a>
-            <a href="/about" aria-label="About Page"><button class="about" style=`color: ${about}`>About</button></a>
-            <a href="/projects" aria-label="Projects Page"><button class="projects" style=`color: ${projects}`>Projects</button></a>
+        <a href="/" aria-label="Home Page"
+            ><button class="home" style=`color: ${home}`>Home</button></a
+        >
+        <a href="/about" aria-label="About Page"
+            ><button class="about" style=`color: ${about}`>About</button></a
+        >
+        <a href="/projects" aria-label="Projects Page"
+            ><button class="projects" style=`color: ${projects}`
+                >Projects</button
+            ></a
+        >
     </div>
 </div>
 
@@ -31,10 +39,14 @@ route === "projects" ? (projects = "#d134b7") : (projects = "#bdcad9");
         z-index: 9;
     }
 
-    ul {
+    .menu-wrapper {
         display: flex;
-        justify-content: space-evenly;
-        list-style: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a {
+        text-align: center;
     }
 
     button {
