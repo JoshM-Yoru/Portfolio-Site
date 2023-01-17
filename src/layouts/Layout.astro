@@ -1,11 +1,10 @@
 ---
-import PalmTree from "../assets/palmtree.png";
 import PortfolioImage from "../assets/portfoliosite.png";
-import Windows from "../components/Windows.astro";
 import "@fontsource/roboto-slab";
 import "@fontsource/roboto/900.css";
 import "@fontsource/roboto/700.css";
 import "@fontsource/roboto";
+import Background from "../components/Background.astro";
 
 export interface Props {
     title: string;
@@ -29,21 +28,7 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <div class="overlay"></div>
-        <div class="overlay glitch"></div>
-        <div class="building-1">
-            <Windows />
-        </div>
-        <div class="building-2">
-            <Windows />
-        </div>
-        <div class="building-3">
-            <Windows />
-        </div>
-        <div class="ground"></div>
-        <div class="sun"></div>
-        <img src={PalmTree} class="tree" alt="Palm Tree" />
-        <img src={PalmTree} class="tree two" alt="Palm Tree" />
+        <Background />
         <slot />
     </body>
 </html>
@@ -139,217 +124,12 @@ const { title } = Astro.props;
         border-right: 1px solid #444;
         z-index: 4;
     }
-
-    .building-1 {
-        position: absolute;
-        height: 300px;
-        width: 150px;
-        left: 5vw;
-        bottom: 20vh;
-        z-index: 3;
-        background-image: linear-gradient(
-            45deg,
-            #010429,
-            #170133,
-            #350138,
-            #00464a
-        );
-        background-size: 400%;
-        animation: bg-animation 40s infinite alternate;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 5px;
-    }
-
-    .building-2 {
-        position: absolute;
-        height: 300px;
-        width: 150px;
-        left: 10vw;
-        bottom: 16vh;
-        z-index: 1;
-        background-image: linear-gradient(
-            45deg,
-            #010429,
-            #170133,
-            #350138,
-            #00464a
-        );
-        background-size: 400%;
-        animation: bg-animation 40s infinite alternate;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 5px;
-    }
-
-    .building-3 {
-        position: absolute;
-        height: 300px;
-        width: 150px;
-        left: 17vw;
-        bottom: 18vh;
-        z-index: 2;
-        background-image: linear-gradient(
-            45deg,
-            #010429,
-            #170133,
-            #350138,
-            #00464a
-        );
-        background-size: 400%;
-        animation: bg-animation 40s infinite alternate;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 5px;
-    }
-
-    .ground {
-        position: absolute;
-        height: 30vh;
-        width: 100vw;
-        bottom: 0;
-        z-index: 3;
-        background-image: linear-gradient(
-            10deg,
-            #010429,
-            #170133,
-            #350138,
-            #00464a
-        );
-        background-size: 400%;
-        animation: bg-animation 50s infinite alternate;
-    }
-
-    @keyframes glow-animation {
-        0% {
-            box-shadow: 0 0 90px 60px rgba(53, 1, 56, 0.7);
-        }
-        100% {
-            box-shadow: 0 0 30px 25px rgba(53, 1, 56, 0.5);
-        }
-    }
-
-    .sun {
-        position: absolute;
-        height: 80vh;
-        width: 80vh;
-        right: 5vw;
-        transform: rotate(90deg);
-        border-radius: 80vh;
-        z-index: 1;
-        background-image: linear-gradient(
-            45deg,
-            #00464a,
-            #350138,
-            #170133,
-            #010429
-        );
-        background-size: 400%;
-        animation: bg-animation 20s infinite alternate,
-            glow-animation 3s ease infinite alternate;
-    }
-
-    .tree {
-        height: 130px;
-        width: auto;
-        position: absolute;
-        z-index: 3;
-        right: 10vw;
-        bottom: 27vh;
-    }
-
-    .two {
-        right: 15vw;
-        bottom: 24vh;
-        transform: scaleX(-1);
-    }
-
     .container {
         padding: 1.5rem;
     }
-
-    .overlay {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 4;
-        background-color: transparent;
-        background-size: 10px 10px, 10px 10px;
-        background-position: -1px -1px, -1px -1px;
-        background-image: linear-gradient(
-                rgba(255, 255, 255, 0.05) 1px,
-                transparent 1px
-            ),
-            linear-gradient(
-                90deg,
-                rgba(255, 255, 255, 0.05) 1px,
-                transparent 1px
-            );
-        mix-blend-mode: difference;
-    }
-    .glitch {
-        clip-path: polygon(0 0, 200% 0, 100% 0.5em, 0 0.5em);
-        animation: glitch 10s linear infinite;
-        transform: translatex(0.1rem);
-    }
-
-    @keyframes glitch {
-        to {
-            clip-path: polygon(
-                0 calc(100% - 0.5em),
-                100% calc(100% - 0.5em),
-                0 100%,
-                0 100%
-            );
-        }
-    }
-
     @media (max-width: 1100px) {
         main {
             background: rgb(4, 5, 27);
-        }
-        .building-1 {
-            display: none;
-        }
-
-        .building-2 {
-            display: none;
-        }
-
-        .building-3 {
-            display: none;
-        }
-
-        .ground {
-            display: none;
-        }
-
-        .sun {
-            display: none;
-        }
-
-        .tree {
-            display: none;
-        }
-
-        .two {
-            display: none;
-        }
-
-        .overlay {
-            display: none;
-        }
-        .glitch {
-            display: none;
-        }
-        .window {
-            display: none;
         }
     }
 

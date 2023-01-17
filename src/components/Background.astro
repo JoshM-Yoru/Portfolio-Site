@@ -1,0 +1,168 @@
+---
+import Windows from "../components/Windows.astro";
+import PalmTree from "../assets/palmtree.png";
+---
+
+<div class="vaporwave">
+    <div class="overlay"></div>
+    <div class="overlay glitch"></div>
+    <div class="building left">
+        <Windows />
+    </div>
+    <div class="building middle">
+        <Windows />
+    </div>
+    <div class="building right">
+        <Windows />
+    </div>
+    <div class="ground"></div>
+    <div class="sun"></div>
+    <img src={PalmTree} class="tree" alt="Palm Tree" />
+    <img src={PalmTree} class="tree two" alt="Palm Tree" />
+</div>
+
+<style>
+    .vaporwave {
+        display: flex;
+        background-color: #111;
+        position: fixed;
+    }
+
+    .building {
+        position: absolute;
+        height: 300px;
+        width: 150px;
+        background-image: linear-gradient(
+            45deg,
+            #010429,
+            #170133,
+            #350138,
+            #00464a
+        );
+        background-size: 400%;
+        animation: bg-animation 40s infinite alternate;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .left {
+        left: 5vw;
+        top: 50vh;
+        z-index: 3;
+    }
+
+    .middle {
+        left: 10vw;
+        top: 52vh;
+        z-index: 1;
+    }
+
+    .right {
+        left: 17vw;
+        top: 48vh;
+        z-index: 2;
+    }
+
+    .ground {
+        position: absolute;
+        height: 30vh;
+        width: 100vw;
+        top: 70vh;
+        z-index: 3;
+        background-image: linear-gradient(
+            10deg,
+            #010429,
+            #170133,
+            #350138,
+            #00464a
+        );
+        background-size: 400%;
+        animation: bg-animation 50s infinite alternate;
+    }
+
+    @keyframes glow-animation {
+        0% {
+            box-shadow: 0 0 90px 60px rgba(53, 1, 56, 0.7);
+        }
+        100% {
+            box-shadow: 0 0 30px 25px rgba(53, 1, 56, 0.5);
+        }
+    }
+
+    .sun {
+        position: absolute;
+        height: 80vh;
+        width: 80vh;
+        top: 5vh;
+        left: 60vw;
+        transform: rotate(90deg);
+        border-radius: 80vh;
+        z-index: 1;
+        background-image: linear-gradient(
+            45deg,
+            #00464a,
+            #350138,
+            #170133,
+            #010429
+        );
+        background-size: 400%;
+        animation: bg-animation 20s infinite alternate,
+            glow-animation 3s ease infinite alternate;
+    }
+
+    .tree {
+        height: 20vh;
+        width: auto;
+        position: absolute;
+        z-index: 3;
+        top: 60vh;
+        left: 85vw;
+    }
+
+    .two {
+        left: 78vw;
+        top: 63vh;
+        transform: scaleX(-1);
+    }
+
+    .overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 4;
+        background-color: transparent;
+        background-size: 10px 10px, 10px 10px;
+        background-position: -1px -1px, -1px -1px;
+        background-image: linear-gradient(
+                rgba(255, 255, 255, 0.05) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.05) 1px,
+                transparent 1px
+            );
+        mix-blend-mode: difference;
+    }
+    .glitch {
+        clip-path: polygon(0 0, 200% 0, 100% 0.5em, 0 0.5em);
+        animation: glitch 10s linear infinite;
+        transform: translatex(0.1rem);
+    }
+
+    @keyframes glitch {
+        to {
+            clip-path: polygon(
+                0 calc(100% - 0.5em),
+                100% calc(100% - 0.5em),
+                0 100%,
+                0 100%
+            );
+        }
+    }
+</style>
