@@ -13,6 +13,7 @@
     "dependencies": {
         "@astrojs/react": "^1.2.2",
         "@fontsource/montserrat": "^4.5.13",
+        "@fontsource/roboto": "^4.5.8",
         "@fontsource/roboto-slab": "^4.5.9",
         "@nanostores/react": "^0.4.1",
         "@types/react": "^18.0.26",
