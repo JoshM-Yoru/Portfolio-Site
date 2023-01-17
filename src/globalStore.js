@@ -1,3 +1,7 @@
 import { atom } from "nanostores";
 
-export const stateStore = atom([]);
+export const showVideo = atom(false);
+
+export function setShowVideo(b) {
+    showVideo.set(b);
+}

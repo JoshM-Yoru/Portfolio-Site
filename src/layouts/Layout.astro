@@ -41,6 +41,7 @@ const { title } = Astro.props;
     </body>
 </html>
 <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab&display=swap');
     * {
         padding: 0;
         margin: 0;
@@ -59,7 +60,11 @@ const { title } = Astro.props;
     }
 
     html {
-        font-family: system-ui, sans-serif;
+        font-family: roboto slab, system-ui, serif;
+    }
+
+    button, textarea, input, h1, h2, h3 {
+        font-family: Montserrat, sans-serif;
     }
 
     @media (max-width: 600px) {

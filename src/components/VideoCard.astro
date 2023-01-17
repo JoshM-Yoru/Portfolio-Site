@@ -1,5 +1,13 @@
 ---
 import YoutubeLogo from "../assets/youtube.png";
+
+import { atom } from "nanostores";
+
+export const showVideo = atom<boolean>(false);
+
+export const setShowVideo = (b: boolean) => {
+    showVideo.set(b);
+}
 export interface Props {
     title: string;
     body: string;
@@ -13,6 +21,8 @@ const { src, title, body, href, id } = Astro.props;
 const imageLinkPrefix: string = "https://i.imgur.com/";
 
 const linkedImage = imageLinkPrefix + id;
+
+
 ---
 
 <div class="link-card">
@@ -22,17 +32,31 @@ const linkedImage = imageLinkPrefix + id;
     <p>
         {body}
     </p>
-    <div class="video-container">
-        <div class="lazy-loading-content image-container">
-            <div class="preview-wrapper">
-                <img class="preview-image" src={linkedImage} alt={title} />
-                <button><img class="play-button" src={YoutubeLogo} alt="play" /></button>
+    <div class="video-container" onclick="handleVideo()">
+        {showVideo ?
+            <iframe
+                loading="lazy"
+                src={href}
+                title="YouTube video player"
+                frameBorder={"0"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen></iframe>
+            :
+            <div class="lazy-loading-content image-container">
+                <div class="preview-wrapper">
+                    <img class="preview-image" src={linkedImage} alt={title} />
+                    <button><img class="play-button" src={YoutubeLogo} alt="play" /></button>
+                </div>
             </div>
-        </div>
+        }
     </div>
 </div>
 
-<script>
+<script client:load>
+    function handleVideo() {
+        setShowVideo(true);
+        console.log("test")
+    }
     /* <iframe */
     /*     loading="lazy" */
     /*     src={href} */
@@ -41,38 +65,38 @@ const linkedImage = imageLinkPrefix + id;
     /*     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" */
     /*     allowfullscreen></iframe> */
 
-    const parentContainer = document.querySelector(".video-container");
+    /* const parentContainer = document.querySelector(".video-container"); */
 
-    parentContainer.addEventListener("click", function () {
-      // remove the image container
-      const lazyLoadingChild = document.querySelector(".lazy-loading-content");
-      parentContainer.removeChild(lazyLoadingChild);
+    /* parentContainer.addEventListener("click", function () { */
+    /*   // remove the image container */
+    /*   const lazyLoadingChild = document.querySelector(".lazy-loading-content"); */
+    /*   parentContainer.removeChild(lazyLoadingChild); */
 
-      // create a new responsive video container
-      const responsiveVideoContainer = document.createElement("div");
+    /*   // create a new responsive video container */
+    /*   const responsiveVideoContainer = document.createElement("div"); */
 
-      // apply responsive classes from bootstrap
-      responsiveVideoContainer.classList.add(
-        "embed-responsive",
-        "embed-responsive-16by9"
-      );
+    /*   // apply responsive classes from bootstrap */
+    /*   responsiveVideoContainer.classList.add( */
+    /*     "embed-responsive", */
+    /*     "embed-responsive-16by9" */
+    /*   ); */
 
-      // create the iFrame with the video embed
-      const videoIframe = document.createElement("iframe");
+    /*   // create the iFrame with the video embed */
+    /*   const videoIframe = document.createElement("iframe"); */
 
-      videoIframe.classList.add("embed-responsive-item");
+    /*   videoIframe.classList.add("embed-responsive-item"); */
 
-        videoIframe.src = href;
-        console.log(href);
+    /*     videoIframe.src = href; */
+    /*     console.log(href); */
 
-      videoIframe.setAttribute("allow", "autoplay");
+    /*   videoIframe.setAttribute("allow", "autoplay"); */
 
-      // add the iFrame to the video container
-      responsiveVideoContainer.appendChild(videoIframe);
+    /*   // add the iFrame to the video container */
+    /*   responsiveVideoContainer.appendChild(videoIframe); */
 
-      // add the video container to the parent container
-      parentContainer.appendChild(responsiveVideoContainer);
-    });
+    /*   // add the video container to the parent container */
+    /*   parentContainer.appendChild(responsiveVideoContainer); */
+    /* }); */
 </script>
 
 <style>
