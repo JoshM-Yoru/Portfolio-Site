@@ -22,14 +22,14 @@ const VideoCard: React.FC<Props> = ({ title, src, body, href, id }) => {
     }
 
     return (
-        <div className="link-card hidden" >
-            <h2 className="article-title hidden">
+        <div className="link-card " >
+            <h2 className="article-title hidden hidden-left">
                 {title}
             </h2>
-            <p className="article-body hidden">
+            <p className="article-body hidden hidden-left">
                 {body}
             </p>
-            <div className="video-container hidden" onClick={handleVideo}>
+            <div className="video-container hidden hidden-right" onClick={handleVideo}>
                 {showVideo ?
                     <iframe
                         loading="lazy"
