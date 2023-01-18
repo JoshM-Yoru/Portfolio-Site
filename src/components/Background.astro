@@ -108,19 +108,19 @@ import PalmTree from "../assets/palmtree.png";
     }
 
     .left {
-        left: 5vw;
+        left: calc(50vw - 950px);
         top: 50vh;
         z-index: 3;
     }
 
     .middle {
-        left: 10vw;
+        left: calc(50vw - 850px);
         top: 52vh;
         z-index: 2;
     }
 
     .right {
-        left: 17vw;
+        left: calc(50vw - 725px);
         top: 48vh;
         z-index: 3;
     }
@@ -141,7 +141,7 @@ import PalmTree from "../assets/palmtree.png";
         height: 80vh;
         width: 80vh;
         top: 5vh;
-        left: 65vw;
+        left: calc(50vw + 250px);
         border-radius: 80vh;
         z-index: -1;
         background-image: linear-gradient(0deg, #00464a, #350138, #170133);
@@ -224,12 +224,12 @@ import PalmTree from "../assets/palmtree.png";
         position: absolute;
         z-index: 4;
         top: 60vh;
-        left: 85vw;
+        left: calc(50vw + 750px);
         /* transform: scale(2); */
     }
 
     .two {
-        left: 78vw;
+        left: calc(50vw + 550px);
         top: 63vh;
         /* transform: scaleX(-1) scale(2); */
         transform: scaleX(-1);
@@ -255,25 +255,24 @@ import PalmTree from "../assets/palmtree.png";
                 rgba(255, 255, 255, 0.02) 1px,
                 transparent 1px
             );
-        /* mix-blend-mode: difference; */
+        mix-blend-mode: difference;
     }
     /* .glitch { */
     /*     clip-path: polygon(0 0, 200% 0, 100% 0.5em, 0 0.5em); */
     /*     /* animation: glitch 10s linear infinite; */
-    */
-    /*     /* transform: translatex(0.1rem); */ */
+    /*     /* transform: translatex(0.1rem); */
     /* } */
 
-    @keyframes glitch {
-        to {
-            clip-path: polygon(
-                0 calc(100% - 0.5em),
-                100% calc(100% - 0.5em),
-                0 100%,
-                0 100%
-            );
-        }
-    }
+    /* @keyframes glitch { */
+    /*     to { */
+    /*         clip-path: polygon( */
+    /*             0 calc(100% - 0.5em), */
+    /*             100% calc(100% - 0.5em), */
+    /*             0 100%, */
+    /*             0 100% */
+    /*         ); */
+    /*     } */
+    /* } */
 
     @keyframes glow-animation {
         0% {
