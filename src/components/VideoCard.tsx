@@ -22,7 +22,7 @@ const VideoCard: React.FC<Props> = ({ title, src, body, href, id }) => {
     }
 
     return (
-        <div className="link-card " >
+        <div className="link-card hidden" >
             <h2 className="article-title hidden hidden-left">
                 {title}
             </h2>
