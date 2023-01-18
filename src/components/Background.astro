@@ -6,6 +6,8 @@ import PalmTree from "../assets/palmtree.png";
 <div class="vaporwave">
     <div class="overlay"></div>
     <div class="overlay glitch"></div>
+    <div class="ground"></div>
+    <div class="sun"></div>
     <div class="building left">
         <Windows />
     </div>
@@ -15,17 +17,81 @@ import PalmTree from "../assets/palmtree.png";
     <div class="building right">
         <Windows />
     </div>
-    <div class="ground"></div>
-    <div class="sun"></div>
     <img src={PalmTree} class="tree" alt="Palm Tree" />
     <img src={PalmTree} class="tree two" alt="Palm Tree" />
 </div>
 
 <style>
+    /* <div class="building-wrapper left"> */
+    /*     <div class="test"> */
+    /*         <Windows /> */
+    /*     </div> */
+    /*     <div class="test side"> */
+    /*         <Windows /> */
+    /*     </div> */
+    /* </div> */
+    /* <div class="building-wrapper middle"> */
+    /*     <div class="test"> */
+    /*         <Windows /> */
+    /*     </div> */
+    /*     <div class="test side"> */
+    /*         <Windows /> */
+    /*     </div> */
+    /* </div> */
+    /* <div class="building-wrapper right"> */
+    /*     <div class="test-right"> */
+    /*         <Windows /> */
+    /*     </div> */
+    /*     <div class="test side-right"> */
+    /*         <Windows /> */
+    /*     </div> */
+    /* </div> */
     .vaporwave {
         display: flex;
         background-color: #111;
         position: fixed;
+        /* display: hidden; */
+    }
+    .building-wrapper {
+        position: absolute;
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+    }
+
+    .test {
+        height: 300px;
+        width: 150px;
+        background-image: linear-gradient(45deg, #010429, #170133, #350138);
+        background-size: 100%;
+        /* background-color: pink; */
+        /* animation: bg-animation 10s infinite alternate; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+        transform: perspective(200px) scale(1.55);
+    }
+    .test-right {
+        height: 300px;
+        width: 150px;
+        background-image: linear-gradient(45deg, #010429, #170133, #350138);
+        background-size: 100%;
+        /* background-color: pink; */
+        /* animation: bg-animation 10s infinite alternate; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+        transform: perspective(200px) scale(1.5) translateX(12%);
+    }
+    .side {
+        transform: perspective(200px) rotateY(73deg);
+    }
+
+    .side-right {
+        transform: perspective(200px) rotateY(85deg);
     }
 
     .building {
@@ -50,13 +116,13 @@ import PalmTree from "../assets/palmtree.png";
     .middle {
         left: 10vw;
         top: 52vh;
-        z-index: 1;
+        z-index: 2;
     }
 
     .right {
         left: 17vw;
         top: 48vh;
-        z-index: 2;
+        z-index: 3;
     }
 
     .ground {
@@ -64,7 +130,7 @@ import PalmTree from "../assets/palmtree.png";
         height: 30vh;
         width: 100vw;
         top: 70vh;
-        z-index: 3;
+        z-index: 4;
         background-image: linear-gradient(0deg, #010429, #170133, #350138);
         background-size: 100%;
         /* animation: bg-animation 30s infinite alternate; */
@@ -77,93 +143,95 @@ import PalmTree from "../assets/palmtree.png";
         top: 5vh;
         left: 65vw;
         border-radius: 80vh;
-        z-index: 1;
-        background-image: linear-gradient(0deg, #350138, #170133);
+        z-index: -1;
+        background-image: linear-gradient(0deg, #00464a, #350138, #170133);
         background-size: 200%;
         animation: glow-animation 3s ease infinite alternate;
         /* bg-animation-top 15s infinite alternate, */
         overflow: hidden;
     }
 
-    .sun::after {
-        content: "";
+    /* .sun::after { */
+    /*     content: ""; */
 
-        display: block;
-        position: absolute;
-        bottom: 0;
+    /*     display: block; */
+    /*     position: absolute; */
+    /*     bottom: 0; */
 
-        width: 100%;
-        height: 50%;
-        background-color: #2b1165;
-        background: linear-gradient(
-            0deg,
-            #170133 0%,
-            rgba(0, 70, 74, 1) 30%,
-            rgba(23, 1, 51, 1),
-            #00464a 100%
-        );
-        background-size: 80vh 80vh;
-        background-position: bottom center;
-        clip-path: polygon(
-            0 1%,
-            100% 1%,
-            100% 2%,
-            0 2%,
-            0 3%,
-            100% 3%,
-            100% 4%,
-            0 4%,
-            0 5%,
-            100% 5%,
-            100% 7%,
-            0 7%,
-            0 9%,
-            100% 9%,
-            100% 11%,
-            0 11%,
-            0 14%,
-            100% 14%,
-            100% 17%,
-            0 17%,
-            0 20%,
-            100% 20%,
-            100% 24%,
-            0 24%,
-            0 28%,
-            100% 28%,
-            100% 37%,
-            0 37%,
-            0 41%,
-            100% 41%,
-            100% 52%,
-            0 52%,
-            0 58%,
-            100% 58%,
-            100% 67%,
-            0 67%,
-            0 76%,
-            100% 76%,
-            100% 81%,
-            0 81%,
-            0 87%,
-            100% 87%,
-            100% 94%,
-            0 94%
-        );
-    }
+    /*     width: 100%; */
+    /*     height: 50%; */
+    /*     background-color: #2b1165; */
+    /*     background: linear-gradient( */
+    /*         0deg, */
+    /*         #170133 0%, */
+    /*         rgba(0, 70, 74, 1) 30%, */
+    /*         rgba(23, 1, 51, 1), */
+    /*         #00464a 100% */
+    /*     ); */
+    /*     background-size: 80vh 80vh; */
+    /*     background-position: bottom center; */
+    /*     clip-path: polygon( */
+    /*         0 1%, */
+    /*         100% 1%, */
+    /*         100% 2%, */
+    /*         0 2%, */
+    /*         0 3%, */
+    /*         100% 3%, */
+    /*         100% 4%, */
+    /*         0 4%, */
+    /*         0 5%, */
+    /*         100% 5%, */
+    /*         100% 7%, */
+    /*         0 7%, */
+    /*         0 9%, */
+    /*         100% 9%, */
+    /*         100% 11%, */
+    /*         0 11%, */
+    /*         0 14%, */
+    /*         100% 14%, */
+    /*         100% 17%, */
+    /*         0 17%, */
+    /*         0 20%, */
+    /*         100% 20%, */
+    /*         100% 24%, */
+    /*         0 24%, */
+    /*         0 28%, */
+    /*         100% 28%, */
+    /*         100% 37%, */
+    /*         0 37%, */
+    /*         0 41%, */
+    /*         100% 41%, */
+    /*         100% 52%, */
+    /*         0 52%, */
+    /*         0 58%, */
+    /*         100% 58%, */
+    /*         100% 67%, */
+    /*         0 67%, */
+    /*         0 76%, */
+    /*         100% 76%, */
+    /*         100% 81%, */
+    /*         0 81%, */
+    /*         0 87%, */
+    /*         100% 87%, */
+    /*         100% 94%, */
+    /*         0 94% */
+    /*     ); */
+    /* } */
 
     .tree {
         height: 20vh;
         width: auto;
         position: absolute;
-        z-index: 3;
+        z-index: 4;
         top: 60vh;
         left: 85vw;
+        /* transform: scale(2); */
     }
 
     .two {
         left: 78vw;
         top: 63vh;
+        /* transform: scaleX(-1) scale(2); */
         transform: scaleX(-1);
     }
 
@@ -174,26 +242,27 @@ import PalmTree from "../assets/palmtree.png";
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: 4;
+        z-index: 5;
         background-color: transparent;
         background-size: 10px 10px, 10px 10px;
         background-position: -1px -1px, -1px -1px;
         background-image: linear-gradient(
-                rgba(255, 255, 255, 0.05) 1px,
+                rgba(255, 255, 255, 0.02) 1px,
                 transparent 1px
             ),
             linear-gradient(
                 90deg,
-                rgba(255, 255, 255, 0.05) 1px,
+                rgba(255, 255, 255, 0.02) 1px,
                 transparent 1px
             );
-        mix-blend-mode: difference;
+        /* mix-blend-mode: difference; */
     }
-    .glitch {
-        clip-path: polygon(0 0, 200% 0, 100% 0.5em, 0 0.5em);
-        animation: glitch 10s linear infinite;
-        transform: translatex(0.1rem);
-    }
+    /* .glitch { */
+    /*     clip-path: polygon(0 0, 200% 0, 100% 0.5em, 0 0.5em); */
+    /*     /* animation: glitch 10s linear infinite; */
+    */
+    /*     /* transform: translatex(0.1rem); */ */
+    /* } */
 
     @keyframes glitch {
         to {
