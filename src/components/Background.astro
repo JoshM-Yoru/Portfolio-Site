@@ -4,9 +4,10 @@ import PalmTree from "../assets/palmtree.png";
 ---
 
 <div class="vaporwave">
-    <div class="overlay"></div>
+    <div class="overlay top"></div>
+    <div class="overlay bottom"></div>
     <div class="overlay glitch"></div>
-    <div class="ground"></div>
+    <div class="ground bottom"></div>
     <div class="sun"></div>
     <div class="building left">
         <Windows />
@@ -48,7 +49,7 @@ import PalmTree from "../assets/palmtree.png";
     /* </div> */
     .vaporwave {
         display: flex;
-        background-color: #111;
+        /* background-color: #111; */
         position: fixed;
         /* display: hidden; */
     }
@@ -144,10 +145,16 @@ import PalmTree from "../assets/palmtree.png";
         left: calc(50vw + 250px);
         border-radius: 80vh;
         z-index: -1;
-        background-image: linear-gradient(0deg, #00464a, #350138, #170133);
+        background-image: linear-gradient(
+            0deg,
+            #00464a 10%,
+            #94167f 35%,
+            #e93479,
+            #f9ac53 60%
+        );
         background-size: 200%;
         /* animation: glow-animation 3s ease infinite alternate; */
-        box-shadow: 0 0 90px 60px rgba(53, 1, 56, 0.7);
+        box-shadow: 0 0 90px 5px rgba(249, 172, 83, 0.7);
         /* bg-animation-top 15s infinite alternate, */
         /* overflow: hidden; */
     }
@@ -239,25 +246,37 @@ import PalmTree from "../assets/palmtree.png";
     .overlay {
         display: block;
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100vw;
-        height: 100vh;
         z-index: 5;
         background-color: transparent;
-        background-size: 10px 10px, 10px 10px;
+        background-size: 20px 20px, 20px 20px;
         background-position: -1px -1px, -1px -1px;
         background-image: linear-gradient(
-                rgba(255, 255, 255, 0.02) 1px,
+                rgba(255, 255, 255, 0.05) 1px,
                 transparent 1px
             ),
             linear-gradient(
                 90deg,
-                rgba(255, 255, 255, 0.02) 1px,
+                rgba(255, 255, 255, 0.05) 1px,
                 transparent 1px
             );
         mix-blend-mode: difference;
     }
+
+    .top {
+        /* top: 0; */
+        /* left: 0; */
+        /* height: 70vh; */
+    }
+
+    .bottom {
+        top: 70vh;
+        left: 0;
+        height: 30vh;
+        transform: perspective(200px) rotateX(70deg);
+        transform-origin: top;
+    }
+
     /* .glitch { */
     /*     clip-path: polygon(0 0, 200% 0, 100% 0.5em, 0 0.5em); */
     /*     /* animation: glitch 10s linear infinite; */
