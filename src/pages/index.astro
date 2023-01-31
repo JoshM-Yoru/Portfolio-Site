@@ -5,6 +5,7 @@ import Home from "../components/Home.astro";
 import Articles from "../components/Articles.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import { Analytics } from "@vercel/analytics/react";
 ---
 
 <Layout title="Welcome to My Portfolio!">
@@ -15,6 +16,7 @@ import Footer from "../components/Footer.astro";
         <Contact />
         <Footer />
     </main>
+    <Analytics />
 </Layout>
 
 <style>
