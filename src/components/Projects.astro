@@ -3,6 +3,7 @@ import GithubLogo from "../assets/GithubLogo.png";
 import YoutubeLogo from "../assets/youtube.png";
 import WeatherLogo from "../assets/weather.png";
 import SunLogo from "../assets/sun.png";
+import Grass from "../assets/grass.jpg";
 ---
 
 <div class="container hidden">
@@ -111,6 +112,30 @@ import SunLogo from "../assets/sun.png";
             </div>
         </div>
     </div>
+    <div class="hidden hidden-right project-wrapper grid-game">
+        <div class="project-body">
+            <h3>Grid Maze Game</h3>
+            <div class="underline"></div>
+            <div class="project-links">
+                <a
+                    href="https://github.com/JoshM-Yoru/GridGame"
+                    target="_blank"
+                    aria-label="Go To The Repository For This Site"
+                >
+                    <img src={GithubLogo} alt="Github Logo" class="github" />
+                    Repo
+                </a>
+                <a
+                    href="https://grid-game-ten.vercel.app/"
+                    target="_blank"
+                    aria-label="Go To Desktop Browser Game"
+                >
+                    <img src={Grass} alt="Minecraft Grass" class="grass" />
+                    Site
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -169,6 +194,10 @@ import SunLogo from "../assets/sun.png";
 
     .portfolio {
         background-image: url(../assets/portfoliosite.png);
+    }
+
+    .grid-game {
+        background-image: url(../assets/GridGame.png);
     }
 
     .project-wrapper {
@@ -257,6 +286,12 @@ import SunLogo from "../assets/sun.png";
 
     .github {
         height: 80px;
+    }
+
+    .grass {
+        height: 70px;
+        width: auto;
+        margin-bottom: 10px;
     }
 
     .youtube {
